@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Login Screen -->
+<div id="login-container">
+    <h2>Login</h2>
+    <form id="login-form">
+        <label for="username">Username/Email:</label>
+        <input type="text" id="username" name="username" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        
+        <button type="submit">Login</button>
+        <a href="#" id="forgot-password">Forgot Password?</a>
+    </form>
+</div>
+
+<!-- Dashboard Screen -->
+<div id="dashboard-container" style="display:none;">
+    <h2>Exercises Dashboard</h2>
+    <div>
+        <label for="language-filter">Filter by Language:</label>
+        <select id="language-filter">
+            <option value="all">All</option>
+            <option value="C">C</option>
+            <option value="Python">Python</option>
+            <option value="Java">Java</option>
+        </select>
+    </div>
+    
+    <div id="exercises-list">
+        <h3>Available Exercises</h3>
+        <div class="exercise" data-language="C">
+            <h4>Exercise 1: C Basics</h4>
+            <p>Short description of Exercise 1.</p>
+            <p>Difficulty: Easy | Time Limit: 30 mins | Points: 10</p>
+            <button onclick="selectExercise('Exercise 1')">Select</button>
+        </div>
+        <div class="exercise" data-language="Python">
+            <h4>Exercise 2: Python Loops</h4>
+            <p>Short description of Exercise 2.</p>
+            <p>Difficulty: Medium | Time Limit: 45 mins | Points: 15</p>
+            <button onclick="selectExercise('Exercise 2')">Select</button>
+        </div>
+        <div class="exercise" data-language="Java">
+            <h4>Exercise 3: Java OOP</h4>
+            <p>Short description of Exercise 3.</p>
+            <p>Difficulty: Hard | Time Limit: 60 mins | Points: 20</p>
+            <button onclick="selectExercise('Exercise 3')">Select</button>
+        </div>
+    </div>
+</div>
+
+<!-- Coding Environment Screen -->
+<div id="coding-environment" style="display:none;">
+    <h2 id="exercise-title">Exercise Title</h2>
+    <p id="exercise-description">Exercise description goes here.</p>
+    
+    <select id="language-switcher">
+        <option value="C">C</option>
+        <option value="Python">Python</option>
+        <option value="Java">Java</option>
+    </select>
+    
+    <textarea id="code-editor" rows="15" cols="80">// Your code here</textarea>
+    
+    <button onclick="runCode()">Run Code</button>
+    <button onclick="clearCode()">Clear Code</button>
+    <button onclick="submitCode()">Submit</button>
+    
+    <div id="test-cases">
+        <h3>Test Cases</h3>
+        <p>Input: <span id="test-input"></span></p>
+        <p>Expected Output: <span id="expected-output"></span></p>
+        <p>Actual Output: <span id="actual-output"></span></p>
+        <p>Status: <span id="submission-status"></span></p>
+    </div>
+    
+    <button onclick="goBack()">Return to Dashboard</button>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
